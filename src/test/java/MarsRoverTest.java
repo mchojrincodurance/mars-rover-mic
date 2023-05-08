@@ -1,7 +1,7 @@
-import net.bytebuddy.agent.VirtualMachine;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MarsRoverTest {
 
@@ -10,11 +10,20 @@ public class MarsRoverTest {
 		// Given
 		MarsRover rover = new MarsRover();
 
+		// Then
+		assertThrows(IllegalArgumentException.class, () -> rover.execute("") );
+	}
+
+	@Test
+	public void shouldReturn00WIfCommandIsL() {
+	    // Given
+		MarsRover rover = new MarsRover();
+
 		// When
-		String result = rover.execute("");
+		String result = rover.execute("L");
 
 		// Then
-		assertEquals(result, "");
+		assertEquals("0:0:W", result);
 	}
 
 }
