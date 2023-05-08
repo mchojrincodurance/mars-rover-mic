@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -49,4 +52,18 @@ public class MarsRoverTest {
 		// Then
 		assertEquals("0:0:E", result);
 	}
+
+	@ParameterizedTest
+	@CsvSource(value = {"R;0:0:E", "M;0:1:N", "RR;0:0:S"}, delimiter = ';')
+	public void shouldReturnExpectedGivenCommand(String input, String expected) {
+		// Given
+		MarsRover rover = new MarsRover();
+
+		// When
+		String result = rover.execute(input);
+
+		// Then
+		assertEquals(expected, result);
+	}
+
 }
