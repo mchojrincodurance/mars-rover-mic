@@ -5,6 +5,11 @@ public class MarsRover {
             throw new IllegalArgumentException();
         }
 
+        if ("M".equals(s)) {
+
+            return "0:1:N";
+        }
+
         return "0:0:W";
     }
 }

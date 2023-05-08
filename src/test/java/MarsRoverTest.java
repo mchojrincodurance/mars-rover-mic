@@ -26,4 +26,15 @@ public class MarsRoverTest {
 		assertEquals("0:0:W", result);
 	}
 
+	@Test
+	public void shouldReturn01NIfCommandIsM() {
+		// Given
+		MarsRover rover = new MarsRover();
+
+		// When
+		String result = rover.execute("M");
+
+		// Then
+		assertEquals("0:1:N", result);
+	}
 }
