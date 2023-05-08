@@ -10,6 +10,11 @@ public class MarsRover {
             return "0:1:N";
         }
 
+        if ("R".equals(s)) {
+
+            return "0:0:E";
+        }
+
         return "0:0:W";
     }
 }

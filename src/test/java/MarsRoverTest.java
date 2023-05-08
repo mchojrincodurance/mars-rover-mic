@@ -37,4 +37,16 @@ public class MarsRoverTest {
 		// Then
 		assertEquals("0:1:N", result);
 	}
+
+	@Test
+	public void shouldReturn00EIfCommandIsR() {
+		// Given
+		MarsRover rover = new MarsRover();
+
+		// When
+		String result = rover.execute("R");
+
+		// Then
+		assertEquals("0:0:E", result);
+	}
 }
